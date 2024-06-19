@@ -27,9 +27,8 @@
       <td class="text-center" th:text="${result.last_name}"></td>
       <td class="text-center" th:text="${result.email}"></td>
       <td class="text-center" th:text="${result.descript}"></td>
-      <td><a th:href="@{lista/} + ${result.id}" th:text="'Eliminar'" class="bg-red-500 hover:bg-red-600 text-white"></a></td>
-      <td><a th:href="@{/registros/edit/{id}(id=${registro.id})}" class="bg-yellow-500 hover:bg-red-600 text-white">Eliminar</a></td>
-    </tr>
+      <td class="text-center border-2 border-black border-solid bg-red-700"><a th:href="@{/lista/{id}(id=${result.id})}">Eliminar</a></td>
+      <td class="text-center border-2 border-black border-solid bg-green-700"><a th:href="@{/editar/{id}(id=${result.id})}">Editar</a></td>    </tr>
     </tbody>
   </table>
 

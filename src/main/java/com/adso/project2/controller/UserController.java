@@ -50,17 +50,17 @@ public class UserController {
         return "redirect:/lista";
     }
 
-    @GetMapping("/registros/edit/{id}")
-    public String editRegistro(@PathVariable Long id, Model model) {
-        Registro registro = serviceRegistro.getRegistro(id);
+    @GetMapping("editar/{id}")
+    public String showEditForm(@PathVariable Long id, Model model) {
+        Registro registro = serviceRegistro.getRegisterById(id);
         model.addAttribute("registro", registro);
-        return "fragments/editRegistro"; // Asegúrate de tener una plantilla llamada "editRegistro"
+        return "pages/editar"; // Nombre de la vista del formulario de edición
     }
 
-    @PostMapping("/registros/update/{id}")
-    public String updateRegistro(@PathVariable Long id, @ModelAttribute Registro registro) {
-        registro.setId(id);
-        serviceRegistro.saveOrUpdate(registro);
+    @PostMapping("editar/update/{id}")
+    public String updateRegister(@PathVariable Long id, @ModelAttribute Registro registro) {
+        registro.setId(id); // Asegura que el ID esté establecido
+        serviceRegistro.updateRegister(registro);
         return "redirect:/lista"; // Redirige a la lista de registros después de actualizar
     }
 }

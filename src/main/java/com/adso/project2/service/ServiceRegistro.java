@@ -11,26 +11,21 @@ public class ServiceRegistro {
     @Autowired
     private RepositoryRegistro repositoryRegister;
 
-    public ServiceRegistro() {
+    public List<Registro> getAllRegistro(){
+        return repositoryRegister.findAll();
     }
-
-    public List<Registro> getAllRegistro() {
-        return this.repositoryRegister.findAll();
+    public Registro saveRegister(Registro registro){
+        return repositoryRegister.save(registro);
     }
-
-    public Registro saveRegister(Registro registro) {
-        return (Registro)this.repositoryRegister.save(registro);
-    }
-
-    public void deleteRegister(long id) {
+    public void deleteRegister(Long id) {
         repositoryRegister.deleteById(id);
     }
-
-    public Registro getRegistro(Long id) {
-        return repositoryRegister.findById(id).orElseThrow(() -> new IllegalArgumentException("ID de registro inválido: " + id));
+    public Registro getRegisterById(Long id) {
+        return repositoryRegister.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid register Id:" + id));
     }
 
-    public void saveOrUpdate(Registro registro) {
+    public void updateRegister(Registro registro) {
         repositoryRegister.save(registro);
     }
 }
+

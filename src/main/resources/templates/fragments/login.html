@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script th:src="@{/js/tailwind.config.js}"></script>
+    <title>Login</title>
+</head>
+<body class="w-100 h-[100vh] flex justify-center items-center">
+<section th:fragment="login" class="w-full h-full flex-1 flex justify-center items-center  bg-cover bg-center bg-[url(https://res.cloudinary.com/dlmhxjzwk/image/upload/v1717677767/duosozy7lgcyzlt3mano.png)]">
+    <form action="#" method="post" class="w-[30%] h-[70%] flex bg-white flex-col justify-evenly border-2 border-solid p-2 rounded-xl">
+        <img src="https://res.cloudinary.com/dlmhxjzwk/image/upload/v1717677037/d0hihyamex4qsc0jzn6q.png"  class="w-[100%] h-[40%]" alt="">
+        <input type="email" placeholder="Correo" class="rounded-md border-solid border-b-2 border-blue-900 p-2 focus:outline-none focus:border-yellow-500 ease-in duration-300">
+        <input type="password" placeholder="Contraseña" class="rounded-md border-solid border-b-2 border-blue-900 p-2 focus:outline-none focus:border-yellow-500 ease-in duration-300">
+        <article class="flex items-center">
+            <input type="checkbox" class="border border-gray-300 rounded-md px-2 py-1 ml-2">
+            <label class="mr-2 ml-2">Terminos y Condiciones</label>
+        </article>
+        <input type="submit" value="Iniciar" class="bg-blue-500 p-2 rounded focus:outline-none hover:bg-yellow-500 ease-in duration-100">
+    </form>
+</section>
+</body>
+</html>

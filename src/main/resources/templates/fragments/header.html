@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script th:src="@{/js/tailwind.config.js}"></script>
+    <title>Title</title>
+</head>
+<body>
+<nav th:fragment="header" class="w-full h-full p-2 bg-gray-400">
+    <ul class="w-full h-full flex justify-between ">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/register/new">Registro</a></li>
+        <li><a href="/lista">Lista</a></li>
+        <li><a href="/inicio">Iniciar Sesion</a></li>
+        <li>Informacion</li>
+        <li>Contacto</li>
+    </ul>
+</nav>
+</body>
+</html>

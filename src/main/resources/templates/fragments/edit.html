@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Registro</title>
+</head>
+<body>
+<h2>Editar Registro</h2>
+<article th:fragment="edit">
+    <form th:object="${registro}" th:action="@{/registros/update/{id}(id=${registro.id})}" method="post">
+        <input type="hidden" th:field="*{id}" />
+        <label>Nombre:</label>
+        <input type="text" th:field="*{name}" /><br/>
+        <label>Apellido:</label>
+        <input type="text" th:field="*{last_name}" /><br/>
+        <label>Correo:</label>
+        <input type="email" th:field="*{email}" /><br/>
+        <label>Descripción:</label>
+        <input type="text" th:field="*{descript}" /><br/>
+        <button type="submit">Guardar</button>
+    </form>
+</article>
+</body>
+</html>

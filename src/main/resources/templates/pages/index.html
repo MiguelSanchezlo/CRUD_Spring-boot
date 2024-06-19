@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <!--<link rel="stylesheet" th:href="@{/css/style.css}">-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script th:src="@{static/js/tailwind.config.js}"></script>
+    <title>Home</title>
+</head>
+<body class="w-full h-auto flex flex-col">
+<section class="w-full h-[100vh] flex flex-col justify-between bg-cover bg-center bg-[url(https://res.cloudinary.com/dlmhxjzwk/image/upload/v1717677767/duosozy7lgcyzlt3mano.png)]">
+    <header th:insert="./fragments/header.html :: header" class="w-full h-12"></header>
+
+    <footer th:insert="./fragments/footer.html :: footer" class="w-full h-20 flex"></footer>
+</section>
+
+</body>
+</html>
